@@ -1,0 +1,44 @@
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0f7ae5;
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+  }
+  
+  .tab {
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+  }
+  
+  .tab:hover {
+    color: #0f7ae5;
+    transform: scale(1.1); /* Effet d'agrandissement */
+  }
+  
+  .content {
+    display: none;
+    padding: 20px;
+  }
+  
+  /* Style pour l'onglet actif */
+  .active-tab {
+    color: #0f7ae5;
+    transform: scale(1.1);
+  }
+  
+  /* Style pour le contenu de l'onglet actif */
+  .active-content {
+    display: block;
+  }
+  

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site d'entraînement</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="tabs">
+    <div id="tabBasics" class="tab" data-test="tab-basics" onclick="changeTab('basics')">Bases de Cypress</div>
+    <div id="tabText" class="tab" data-test="tab-text" onclick="changeTab('text')">Texte</div>
+    <div id="tabInput" class="tab" data-test="tab-input" onclick="changeTab('input')">Input</div>
+    <div id="tabDropdown" class="tab" data-test="tab-dropdown" onclick="changeTab('dropdown')">Dropdown menu</div>
+    <div id="tabCheckboxes" class="tab" data-test="tab-checkboxes" onclick="changeTab('checkboxes')">Checkboxes</div>
+    <div id="tabRadioButtons" class="tab" data-test="tab-radioButtons" onclick="changeTab('radioButtons')">Boutons radios</div>
+    <div id="tabForm" class="tab" data-test="tab-form" onclick="changeTab('form')">Formulaire</div>
+  </div>
+
+  <div class="content" id="contentBasics" data-test="content-basics">
+
+    <h2>Bases de Cypress</h2>
+    <p>Voici les étapes de base pour utiliser Cypress :</p>
+
+    <!-- Étapes en lignes de commande -->
+    <span class="command">1. Installer <a href="https://nodejs.org/" target="_blank">Node.js</a> </span> <br>
+
+    <span class="command">2. Créer un projet </span> <br>
+    <code>
+        $ mkdir mon_projet_cypress <br>
+        $ cd mon_projet_cypress <br>
+    </code>
+
+    <span class="command">3. Initialiser le projet </span> <br>
+    <code>$ npm init</code> <br>
+
+    <span class="command">4. Installer Cypress </span> <br>
+    <code>$ npm install cypress --save-dev</code> <br>
+
+    <span class="command">5. Ouvrir Cypress </span> <br>
+    <code>$ npx cypress open</code> <br>
+
+  </div>
+
+  <div class="content" id="contentText" data-test="content-text">
+    <!-- Contenu de l'onglet Texte -->
+    <p>Ici, on va vérifier que le texte contient 1000 lettres</p> <br>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. N</p>
+  </div>
+
+  <div class="content" id="contentInput" data-test="content-input">
+
+    <h2>Voici quelques exemples d'inputs avec différents types :</h2>
+
+    <label for="text-input">Texte :</label>
+    <input type="text" id="text-input" placeholder="Entrez du texte"> <br><br>
+
+    <label for="number-input">Nombre :</label>
+    <input type="number" id="number-input" placeholder="Entrez un nombre"> <br><br>
+
+    <label for="email-input">Email :</label>
+    <input type="email" id="email-input" placeholder="Entrez votre adresse email"> <br><br>
+
+    <label for="time-input">Heure :</label>
+    <input type="time" id="time-input" placeholder="Sélectionnez une heure"> <br><br>
+
+    <label for="date-input">Date :</label>
+    <input type="date" id="date-input" placeholder="Sélectionnez une date"> <br><br>
+
+    <label for="color-input">Couleur :</label>
+    <input type="color" id="color-input" value="#ff0000"> <br><br>
+
+  </div>
+
+  <div class="content" id="contentDropdown" data-test="content-dropdown">
+
+    <label for="cities-dropdown">Un peu de nostalgie 😁 :</label>
+    <select id="cities-dropdown">
+      <option value="">Sélectionnez une ville</option>
+      <option value="argenta">Argenta</option>
+      <option value="azuria">Azuria</option>
+      <option value="parmanie">Parmanie</option>
+      <option value="carmin-sur-mer">Carmin-sur-Mer</option>
+      <option value="cramois'ile">Cramois'île</option>
+      <option value="jadielle">Jadielle</option>
+      <option value="safrania">Safrania</option>
+      <option value="céladopole">Céladopole</option>
+    </select>
+
+  </div>
+
+  <div class="content" id="contentCheckboxes" data-test="content-checkboxes">
+
+    <h2>Choix de personnages</h2>
+
+    <input type="checkbox" id="goku-checkbox" value="goku">
+    <label for="goku-checkbox">Goku</label> <br>
+
+    <input type="checkbox" id="gohan-checkbox" value="gohan">
+    <label for="gohan-checkbox">Gohan</label> <br>
+
+    <input type="checkbox" id="goten-checkbox" value="goten">
+    <label for="goten-checkbox">Goten</label> <br>
+
+    <input type="checkbox" id="vegeta-checkbox" value="vegeta">
+    <label for="vegeta-checkbox">Vegeta</label> <br>
+
+    <input type="checkbox" id="trunks-checkbox" value="trunks">
+    <label for="trunks-checkbox">Trunks</label> <br>
+
+  </div>
+
+
+  <div class="content" id="contentRadioButtons" data-test="content-radioButtons">
+
+    <h2>Choix de Pokémon</h2>
+  
+    <input type="radio" id="pikachu-radio" name="pokemon" value="pikachu">
+    <label for="pikachu-radio">Pikachu</label> <br>
+  
+    <input type="radio" id="evoli-radio" name="pokemon" value="evoli">
+    <label for="evoli-radio">Evoli</label> <br>
+  
+    <input type="radio" id="bulbizarre-radio" name="pokemon" value="bulbizarre">
+    <label for="bulbizarre-radio">Bulbizarre</label> <br>
+  
+    <input type="radio" id="carapuce-radio" name="pokemon" value="carapuce">
+    <label for="carapuce-radio">Carapuce</label> <br>
+  
+    <input type="radio" id="salamèche-radio" name="pokemon" value="salamèche">
+    <label for="salamèche-radio">Salamèche</label> <br>
+
+  </div>
+  
+
+  <div class="content" id="contentForm" data-test="content-form">
+
+    <h2>Formulaire</h2>
+  
+    <form id="myForm">
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" required> <br>
+  
+      <label for="prenom">Prénom :</label>
+      <input type="text" id="prenom" name="prenom" required> <br>
+  
+      <label for="dateNaissance">Date de naissance :</label>
+      <input type="date" id="dateNaissance" name="dateNaissance" required> <br>
+  
+      <label>Tranche d'âge :</label>
+
+      <div>
+        <input type="radio" id="moins20" name="trancheAge" value="-20" required>
+        <label for="moins20">Moins de 20 ans</label>
+      </div>
+  
+      <div>
+        <input type="radio" id="20a50" name="trancheAge" value="20a50" required>
+        <label for="20a50">Entre 20 et 50 ans</label>
+      </div>
+  
+      <div>
+        <input type="radio" id="plus50" name="trancheAge" value="plus50" required>
+        <label for="plus50">Plus de 50 ans</label>
+      </div> <br>
+  
+      <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+  </div>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
