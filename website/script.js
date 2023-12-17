@@ -19,41 +19,53 @@ selectedContent.classList.add('active-content');
 let selectedTab = document.getElementById('tab' + tabName.charAt(0).toUpperCase() + tabName.slice(1));
 selectedTab.classList.add('active-tab');
 }
+  
 
 function submitForm() {
-// Récupère les valeurs du formulaire
-const nom = document.getElementById('nom').value;
-const prenom = document.getElementById('prenom').value;
-const dateNaissance = document.getElementById('dateNaissance').value;
-
-// Récupère la tranche d'âge sélectionnée
-let trancheAge = '';
-const radios = document.getElementsByName('trancheAge');
-for (const radio of radios) {
-    if (radio.checked) {
-    trancheAge = radio.value;
-    break;
+    // Récupère les valeurs du formulaire
+    const nom = document.getElementById('nom').value;
+    const prenom = document.getElementById('prenom').value;
+    const dateNaissance = document.getElementById('dateNaissance').value;
+  
+    // Récupère la tranche d'âge sélectionnée
+    let trancheAge = '';
+    const radios = document.getElementsByName('trancheAge');
+    for (const radio of radios) {
+      if (radio.checked) {
+        trancheAge = radio.value;
+        break;
+      }
     }
-}
+  
+    // Vérifie que tous les champs obligatoires sont remplis
+    if (nom.trim() === '' || prenom.trim() === '' || dateNaissance.trim() === '' || trancheAge === '') {
+      alert('Veuillez remplir tous les champs obligatoires.');
+      return; // Arrête la fonction si un champ obligatoire est vide
+    }
+  
+    // Vérifie que les champs "Nom" et "Prénom" contiennent uniquement des caractères alphabétiques
+    const alphabetRegex = /^[a-zA-Z\s]*$/;
+    if (!alphabetRegex.test(nom) || !alphabetRegex.test(prenom)) {
+      alert('Les champs "Nom" et "Prénom" ne doivent contenir que des caractères alphabétiques.');
+      return;
+    }
+  
+    // Vérifie que la date de naissance n'est pas dans le futur
+    const today = new Date();
+    const selectedDate = new Date(dateNaissance);
+    if (selectedDate > today) {
+      alert('La date de naissance ne peut pas être dans le futur.');
+      return;
+    }
 
-// Affiche les informations dans une alerte
-alert(`Nom: ${nom}\nPrénom: ${prenom}\nDate de naissance: ${dateNaissance}\nTranche d'âge: ${trancheAge}`);
-}
+    // Affiche les informations dans une alerte
+    alert(`Nom: ${nom}\nPrénom: ${prenom}\nDate de naissance: ${dateNaissance}\nTranche d'âge: ${trancheAge}`);
   
 
-// function submitForm() {
-//     let form = document.getElementById("myForm");
-//     let firstName = form.elements["firstName"].value;
-//     let lastName = form.elements["lastName"].value;
-//     let dob = form.elements["dob"].value;
-//     let ageGroup = form.elements["ageGroup"].value;
+    // Ligne de code qui sert à formater la date dans le format DD-MM-YYYY si besoin, ne pas oublier de dé-commenter celle du dessus
+    // const formattedDate = selectedDate.toLocaleDateString('fr-FR'); 
+    // alert(`Nom: ${nom}\nPrénom: ${prenom}\nDate de naissance: ${formattedDate}\nTranche d'âge: ${trancheAge}`);
+    }
+
   
-//     let summary = "Récapitulatif :\n";
-//     summary += "Nom : " + firstName + "\n";
-//     summary += "Prénom : " + lastName + "\n";
-//     summary += "Date de naissance : " + dob + "\n";
-//     summary += "Tranche d'âge : " + ageGroup;
-  
-//     alert(summary);
-//   }
   
