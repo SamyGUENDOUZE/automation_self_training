@@ -1,4 +1,5 @@
-<u>Epic</u> : <u>Vérification de texte dans l'onglet Texte</u>
+<u><h3> Epic </u >: <u> Vérification de texte dans l'onglet Texte </h3></u>
+
 
 [ ] <span style = "color:#3C830C">***Scénario: Vérifier que le texte contient 1000 caractères*** </span><br>
 **Étant donné que** l'utilisateur est sur la page dans l'onglet "Texte" <br>
@@ -9,7 +10,7 @@
 ---
 ---
 
-<u> Epic </u> : <u> Test de l'onglet Input </u>
+<h3><u> Epic </u> : <u> Test de l'onglet Input </u></h3>
 
 [ ] <span style = "color:#3C830C">***Scénario: Cas passant - Remplir le champ Texte avec une valeur valide*** </span> <br>
 **Étant donné que** l'utilisateur est sur la page dans l'onglet "Input" <br>
@@ -94,4 +95,76 @@
 
 ---
 ---
+
+<h3><u> Epic </u> : <u> Test de l'onglet Dropdown Menu </u></h3>
+
+[ ] <span style="color:#3C830C">***Scénario: Tester toutes les options du menu déroulant*** </span> <br>
+**Étant donné que** l'utilisateur est sur la page dans l'onglet "Dropdown Menu" <br>
+**Quand** l'utilisateur sélectionne chaque option du menu déroulant <br>
+**Alors** le menu déroulant affiche l'option sélectionnée à chaque étape <br>
+**Et** aucune erreur n'est affichée 
+
+---
+---
+
+<h3><u> Epic </u> : <u> Test de l'onglet Checkbox </u></h3>
+
+[ ] <span style="color:#3C830C">***Scénario: Tester toutes les options des cases à cocher*** </span> <br>
+**Étant donné que** l'utilisateur est sur la page dans l'onglet "Checkbox" <br>
+**Quand** l'utilisateur sélectionne chaque option de la liste des cases à cocher <br>
+**Alors** chaque case à cocher est cochée et affiche l'option sélectionnée <br>
+**Et** aucune erreur n'est affichée 
+
+---
+---
+
+<h3><u> Epic </u> : <u> Test de l'onglet Button Radios </u></h3>
+
+[ ] <span style="color:#3C830C">***Scénario: Tester toutes les options des boutons radio*** </span> <br>
+**Étant donné que** l'utilisateur est sur la page dans l'onglet "Button Radios" <br>
+**Quand** l'utilisateur sélectionne chaque option des boutons radio <br>
+**Alors** le bouton radio correspondant à l'option est activé <br>
+**Et** aucune erreur n'est affichée 
+
+---
+---
+
+<h3><u> Epic </u> : <u> Test de l'onglet Formulaire </u></h3>
+
+[ ] <span style="color:#3C830C">***Scénario: Cas passant - Remplir tous les champs avec des valeurs valides*** </span> <br>
+**Étant donné que** l'utilisateur est sur la page dans l'onglet "Formulaire" <br>
+**Quand** l'utilisateur remplit tous les champs avec des valeurs valides <br>
+**Et** qu'il sélectionne chaque option de la tranche d'âge <br>
+**Alors** le formulaire accepte les données et aucune erreur n'est affichée <br>
+**Et** le choix de la tranche d'âge fonctionne correctement à chaque étape <br>
+**Et** aucune erreur n'est affichée
+
+[ ] <span style="color:#FD0D0D;">***Scénario: Cas non-pasant - Laisser un champ obligatoire vide*** </span> <br>
+**Étant donné que** l'utilisateur est sur la page dans l'onglet "Formulaire" <br>
+**Quand** l'utilisateur clique sur "Submit" sans remplir un champ obligatoire <br>
+**Alors** le formulaire devrait afficher une erreur indiquant que certains champs sont obligatoires <br>
+
+
+[ ] <span style="color:#FD0D0D;">***Scénario: Cas non-pasant - Sélectionner aucune tranche d'âge*** </span> <br>
+**Étant donné que** l'utilisateur est sur la page dans l'onglet "Formulaire" <br>
+**Quand** l'utilisateur clique sur "Submit" sans sélectionner de tranche d'âge <br>
+**Alors** le formulaire devrait afficher une erreur indiquant que la tranche d'âge est obligatoire <br>
+
+
+[ ] <span style="color:#FD0D0D;">***Scénario: Cas non-pasant - Saisir une date de naissance invalide*** </span> <br>
+**Étant donné que** l'utilisateur est sur la page dans l'onglet "Formulaire" <br>
+**Quand** l'utilisateur entre une date de naissance invalide <br>
+**Alors** le formulaire devrait afficher une erreur indiquant que la date de naissance est invalide <br>
+
+
+[ ] <span style="color:#FD0D0D;">***Scénario: Cas non-pasant - Entrer des caractères non alphabétiques dans les champs "Nom" ou "Prénom"*** </span> <br>
+**Étant donné que** l'utilisateur est sur la page dans l'onglet "Formulaire" <br>
+**Quand** l'utilisateur entre des caractères non alphabétiques dans les champs "Nom" ou "Prénom" <br>
+**Alors** le formulaire devrait afficher une erreur indiquant que seuls les caractères alphabétiques sont autorisés dans ces champs <br>
+
+
+[ ] <span style="color:#FD0D0D;">***Scénario: Cas non-pasant - Saisir une date de naissance dans le futur*** </span> <br>
+**Étant donné que** l'utilisateur est sur la page dans l'onglet "Formulaire" <br>
+**Quand** l'utilisateur entre une date de naissance future <br>
+**Alors** le formulaire devrait afficher une erreur indiquant que la date de naissance ne peut pas être dans le futur <br>
 

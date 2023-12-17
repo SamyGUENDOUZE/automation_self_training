@@ -40,3 +40,20 @@ for (const radio of radios) {
 alert(`Nom: ${nom}\nPrénom: ${prenom}\nDate de naissance: ${dateNaissance}\nTranche d'âge: ${trancheAge}`);
 }
   
+
+// function submitForm() {
+//     let form = document.getElementById("myForm");
+//     let firstName = form.elements["firstName"].value;
+//     let lastName = form.elements["lastName"].value;
+//     let dob = form.elements["dob"].value;
+//     let ageGroup = form.elements["ageGroup"].value;
+  
+//     let summary = "Récapitulatif :\n";
+//     summary += "Nom : " + firstName + "\n";
+//     summary += "Prénom : " + lastName + "\n";
+//     summary += "Date de naissance : " + dob + "\n";
+//     summary += "Tranche d'âge : " + ageGroup;
+  
+//     alert(summary);
+//   }
+  
