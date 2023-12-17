@@ -167,4 +167,3 @@
 **Étant donné que** l'utilisateur est sur la page dans l'onglet "Formulaire" <br>
 **Quand** l'utilisateur entre une date de naissance future <br>
 **Alors** le formulaire devrait afficher une erreur indiquant que la date de naissance ne peut pas être dans le futur <br>
-
