@@ -34,3 +34,24 @@ describe('Onglet Dropdown menu', () => {
   });
 
 });
+
+describe.only('Onglet Toggle switch', () => {
+
+  it('Scénario: Tester le toggle switch quand il est activé ET désactivé', () => {
+    cy.visit('http://127.0.0.1:5500/website/index.html');
+    cy.get('[data-test="tab-toggleSwitch"]').click();
+
+    //Succesion d'étapes pour vérifier que le toggle est désactivé PAR DEFAUT puis activé pour être de nouveau désactivé
+    cy.get('.toggle-checkbox')
+      .should('not.be.checked');
+    cy.get('.toggle-switch')
+    .click();
+    cy.get('.toggle-checkbox')
+      .should('be.checked');
+    cy.get('.toggle-switch')
+    .click();
+    cy.get('.toggle-checkbox')
+      .should('not.be.checked');
+  });
+
+});

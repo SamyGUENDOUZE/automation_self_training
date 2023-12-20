@@ -129,6 +129,18 @@
 ---
 ---
 
+<h3><u> Epic </u> : <u> Test de l'onglet Toggle switch </u></h3>
+
+[ ] <span style="color:#3C830C">***Scénario: Tester le toggle switch quand il est activé ET désactivé*** </span> <br>
+**Étant donné que** l'utilisateur est sur la page dans l'onglet "Toggle switch" <br>
+**Et** que le toggle switch est désactivé par défaut <br>
+**Quand** l'utilisateur clique sur le toggle switch <br>
+**Alors** le toggle switch change de couleur <br>
+**Et** réciproquement lorsque l'utilisateur reclique dessus 
+
+---
+---
+
 <h3><u> Epic </u> : <u> Test de l'onglet Formulaire </u></h3>
 
 [ ] <span style="color:#3C830C">***Scénario: Cas passant - Remplir tous les champs avec des valeurs valides*** </span> <br>
