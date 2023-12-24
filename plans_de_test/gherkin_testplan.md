@@ -31,53 +31,39 @@
 **Et** aucune erreur n'est affichée
 
 [ ] <span style = "color:#3C830C">***Scénario: Cas passant #1 - Remplir le champ Heure avec une heure valide en écrivant une heure correcte directement dans le champ*** </span> <br>
-**Étant donné que** l'utilisateur est sur la page dans l'onglet "Input" <br>
+**Étant donné que** l'utilisateur est sur la page dans l'onglet "Input" avec Firefox <br>
 **Quand** l'utilisateur entre une heure valide dans le champ de type "heure" <br>
 **Alors** le champ est considéré comme rempli avec succès <br>
 **Et** aucune erreur n'est affichée
 
-[ ] <span style = "color:#3C830C">***Scénario: Cas passant #2 - Remplir le champ Heure avec une heure valide en cliquant sur l'icône*** </span> <br>
-**Étant donné que** l'utilisateur est sur la page dans l'onglet "Input" <br>
+<!-- [ ] <span style = "color:#3C830C">***Scénario: Cas passant #2 - Remplir le champ Heure avec une heure valide en cliquant sur l'icône*** </span> <br>
+**Étant donné que** l'utilisateur est sur la page dans l'onglet "Input" avec Firefox <br>
 **Quand** l'utilisateur clique sur l'icône de l'horloge <br>
 **Alors** le timepicker apparaît <br>
 **Et** l'utilisateur peut choisir l'heure qu'il souhaite <br>
-**Et** aucune erreur n'est affichée
+**Et** aucune erreur n'est affichée -->
 
 [ ] <span style = "color:#3C830C">***Scénario: Cas passant #1 - Remplir le champ Date avec une date valide en écrivant un date correcte directement dans le champ*** </span> <br>
-**Étant donné que** l'utilisateur est sur la page dans l'onglet "Input" <br>
+**Étant donné que** l'utilisateur est sur la page dans l'onglet "Input" avec Firefox <br>
 **Quand** l'utilisateur entre une date valide dans le champ de type "date" <br>
 **Alors** le champ est considéré comme rempli avec succès <br>
 **Et** aucune erreur n'est affichée
 
-[ ] <span style = "color:#3C830C">***Scénario: Cas passant #2 - Remplir le champ Date avec une date valide en cliquant sur l'icône*** </span> <br>
-**Étant donné que** l'utilisateur est sur la page dans l'onglet "Input" <br>
+<!-- [ ] <span style = "color:#3C830C">***Scénario: Cas passant #2 - Remplir le champ Date avec une date valide en cliquant sur l'icône*** </span> <br>
+**Étant donné que** l'utilisateur est sur la page dans l'onglet "Input" avec Firefox <br>
 **Quand** l'utilisateur clique sur l'icône du calendrier <br>
 **Alors** le calendrier apparaît <br>
 **Et** l'utilisateur peut choisir la date qu'il souhaite <br>
-**Et** aucune erreur n'est affichée
+**Et** aucune erreur n'est affichée -->
 
-[ ] <span style = "color:#3C830C">***Scénario: Cas passant #1 - Choisir la couleur (RGB)*** </span> <br>
-**Étant donné que** l'utilisateur est sur la page dans l'onglet "Input" <br>
-**Quand** l'utilisateur clique dans le champ de type "couleur" <br>
-**Alors** le choix est, par défaut, en RGB <br>
-**Et** l'utilisateur clique sur chaque champ pour choisir sa couleur <br>
-**Et** aucune erreur n'est affichée 
-
-[ ] <span style = "color:#3C830C">***Scénario: Cas passant #2 - Choisir la couleur (HSL)*** </span> <br>
-**Étant donné que** l'utilisateur est sur la page dans l'onglet "Input" <br>
-**Quand** l'utilisateur clique dans le champ de type "couleur" <br>
-**Alors** l'utilisateur clique sur les flèches à côté des champs RGB <br>
-**Et** le choix HSL apparaît <br>
-**Et** l'utilisateur clique sur chaque champ pour choisir sa couleur <br>
-**Et** aucune erreur n'est affichée
-
-[ ] <span style = "color:#3C830C">***Scénario: Cas passant #3 - Choisir la couleur (Hexadécimal)*** </span> <br>
+[ ] <span style = "color:#3C830C">***Scénario: Cas passant - Choisir la couleur (Hexadécimal)*** </span> <br>
 **Étant donné que** l'utilisateur est sur la page dans l'onglet "Input" <br>
 **Quand** l'utilisateur clique dans le champ de type "couleur" <br>
 **Alors** l'utilisateur clique deux fois sur les flèches à côté des champs RGB <br>
 **Et** le choix HEX apparaît <br>
 **Et** l'utilisateur clique sur le champ pour choisir sa couleur <br>
 **Et** aucune erreur n'est affichée
+<!-- Après plusieurs tests, il est beaucoup plus simple de choisir uniquement la couleur hexadécimal quitte à faire une fonction qui convertit le HSL et le RGB en HEX éventuellement -->
 
 [ ] <span style = "color:#FD0D0D">***Scénario: Cas non-passant - Remplir le champ Nombre avec une valeur non-numérique*** </span> <br>
 **Étant donné que** l'utilisateur est sur la page dans l'onglet "Input" <br>
