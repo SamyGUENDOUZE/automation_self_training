@@ -2,7 +2,7 @@ describe('Onglet Texte', () => {
 
   it('Scénario : Vérifier que le texte contient 1000 caractères', () => {
     // Se rendre sur le site en local/beta/env. de test/prod selon le cas => Remplacer l'URL par la bonne adresse et/ou le bon port
-    cy.visit('http://127.0.0.1:5500/website/index.html') 
+    cy.visit('/index.html') 
 
     // Vérifier que le texte contient exactement 1000 caractères 
     cy.get('[data-test="tab-text"]')
@@ -18,19 +18,19 @@ describe('Onglet Texte', () => {
 describe('Onglet Input', () => {
 
   it('Scénario: Cas passant - Remplir les différents champs avec des valeurs valides ET conformes', () => {
-    cy.visit('http://127.0.0.1:5500/website/index.html');
+    cy.visit('/index.html');
     cy.get('[data-test="tab-input"]')
       .click();
   
     const text = 'SonGoku@';
-    cy.get('#text-input')
+    cy.get('[data-test="text-input"]')
       .type(text)
       .should('have.value', text)
       .invoke('val') 
       .should('match',  /^[A-Za-z\s-_!@#$%^&*()~`]+$/); // REGEX pour vérifier si la valeur contient uniquement des lettres et des caractères spéciaux
 
     const number = '121212';
-    cy.get('#number-input')
+    cy.get('[data-test="number-input"]')
       .type(number)
       .should('have.value', number)
       .invoke('val')
@@ -38,24 +38,24 @@ describe('Onglet Input', () => {
       .should('be.a', 'number'); 
 
     const email = 'test@example.com';
-    cy.get('#email-input')
+    cy.get('[data-test="email-input"]')
       .type(email)
       .should('have.value', email)
       .invoke('val')
       .should('match', /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$/);
 
     const hour = '14:30';
-    cy.get('#time-input')
+    cy.get('[data-test="time-input"]')
       .type(hour)
       .should('have.value', hour);
 
     const date = '2023-12-20'; // Pour les tests, on est obligés de garder ce format de date
-    cy.get('#date-input')
+    cy.get('[data-test="date-input"]')
       .type(date)
       .should('have.value', date);
 
-    const hexColor = '#ff7e29'; // Après plusieurs tests, c'est meiux de choisir le format hexadécimal. Si on veut tester le RGB/HSL, c'est mieux d'écrire une fonction qui convertit ces valeurs en hexadécimal
-    cy.get('#color-input')
+    const hexColor = '#ff7e29'; // Après plusieurs tests, c'est mieux de choisir le format hexadécimal. Si on veut tester le RGB/HSL, c'est mieux d'écrire une fonction qui convertit ces valeurs en hexadécimal
+    cy.get('[data-test="color-input"]')
       .invoke('val', hexColor)
       .trigger('change')
       .should('have.value', hexColor);
@@ -65,7 +65,7 @@ describe('Onglet Input', () => {
 describe('Onglet Dropdown menu', () => {
 
   it('Scénario : Test toutes les options du menu déroulant', () => {
-    cy.visit('http://127.0.0.1:5500/website/index.html');
+    cy.visit('/index.html');
     cy.get('[data-test="tab-dropdown"]')
       .click();
 
@@ -74,7 +74,7 @@ describe('Onglet Dropdown menu', () => {
 
     // Parcours de chaque option
     options.forEach((option) => {
-        cy.get('#cities-dropdown')
+        cy.get('[data-test="cities-dropdown"]')
           .select(option);
         // Réinitialise le menu déroulant pour passer à l'option suivante
         cy.get('[data-test="tab-dropdown"]')
@@ -87,7 +87,7 @@ describe('Onglet Dropdown menu', () => {
 describe('Onglet Checkboxes', () => {
 
   it('Scénario: Tester toutes les options des cases à cocher', () => {
-    cy.visit('http://127.0.0.1:5500/website/index.html');
+    cy.visit('/index.html');
     cy.get('[data-test="tab-checkboxes"]')
       .click();
 
@@ -96,7 +96,7 @@ describe('Onglet Checkboxes', () => {
 
     // Check de chaque checkbox à travers une liste plutôt que de le faire un par un
     choices.forEach((choice) => {
-      cy.get(`#${choice}-checkbox`)
+      cy.get(`[data-test=${choice}-checkbox]`)
         .should('not.be.checked')
         .check()
         .should('be.checked')
@@ -110,7 +110,7 @@ describe('Onglet Checkboxes', () => {
 describe('Onglet Boutons Radios', () => {
 
   it('Scénario: Tester toutes les options des boutons radio', () => {
-    cy.visit('http://127.0.0.1:5500/website/index.html');
+    cy.visit('/index.html');
     cy.get('[data-test="tab-radioButtons"]')
       .click();
 
@@ -119,13 +119,13 @@ describe('Onglet Boutons Radios', () => {
 
     // Vérifier l'état initial (aucun bouton radio n'est sélectionné)
     choices.forEach((choice) => {
-      cy.get(`#${choice}-radio`)
+      cy.get(`[data-test=${choice}-radio]`)
         .should('not.be.checked');
     });
 
     // Sélectionner chaque bouton radio un par un
     choices.forEach((choice) => {
-      cy.get(`#${choice}-radio`)
+      cy.get(`[data-test=${choice}-radio]`)
         .should('not.be.checked')
         .check()
         .should('be.checked');
@@ -137,21 +137,12 @@ describe('Onglet Boutons Radios', () => {
 describe('Onglet Toggle switch', () => {
 
   it('Scénario: Tester le toggle switch quand il est activé ET désactivé', () => {
-    cy.visit('http://127.0.0.1:5500/website/index.html');
+    cy.visit('/index.html');
     cy.get('[data-test="tab-toggleSwitch"]')
       .click();
 
-    //Succesion d'étapes pour vérifier que le toggle est désactivé PAR DEFAUT puis activé pour être de nouveau désactivé
-    cy.get('.toggle-checkbox')
-      .should('not.be.checked');
-    cy.get('.toggle-switch')
-      .click();
-    cy.get('.toggle-checkbox')
-      .should('be.checked');
-    cy.get('.toggle-switch')
-      .click();
-    cy.get('.toggle-checkbox')
-      .should('not.be.checked');
+    // switch ON / switch OFF
+    cy.checkToggleStateAndClick();
   });
 
 });
@@ -159,7 +150,7 @@ describe('Onglet Toggle switch', () => {
 describe('Test de l\'onglet Formulaire', () => {
 
   it('Scenario : Cas passant - Remplir tous les champs avec des valeurs valides', () => {
-    cy.visit('http://127.0.0.1:5500/website/index.html'); 
+    cy.visit('/index.html'); 
     cy.get('[data-test="tab-form"]')
       .click();
 
@@ -187,7 +178,7 @@ describe('Test de l\'onglet Formulaire', () => {
 
   // Ce cas de test marche si on oublie chaque option, y compris les tranches d'âges
   it('Scenario : Cas non-passant - Laisser un champ obligatoire vide', () => {
-    cy.visit('http://127.0.0.1:5500/website/index.html');
+    cy.visit('/index.html');
     cy.get('[data-test="tab-form"]')
       .click();
 
@@ -203,7 +194,7 @@ describe('Test de l\'onglet Formulaire', () => {
   });
 
   it('Scénario: Cas non-pasant - Saisir une date de naissance invalide/dans le futur', () => {
-    cy.visit('http://127.0.0.1:5500/website/index.html'); 
+    cy.visit('/index.html'); 
     cy.get('[data-test="tab-form"]')
       .click();
 
@@ -232,7 +223,7 @@ describe('Test de l\'onglet Formulaire', () => {
   });
 
   it('Scénario: Cas non-pasant - Entrer des caractères non alphabétiques dans les champs "Nom" ou "Prénom"', () => {
-    cy.visit('http://127.0.0.1:5500/website/index.html'); 
+    cy.visit('/index.html'); 
     cy.get('[data-test="tab-form"]')
       .click();
 

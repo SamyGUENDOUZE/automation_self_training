@@ -23,3 +23,20 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add('checkToggleStateAndClick', () => {
+    // Vérifie que le toggle est décoché par défaut)
+    cy.get('[data-test="toggle-checkbox"]')
+      .should('not.be.checked');
+  
+    cy.get('[data-test="toggle-switch"]')
+      .click();
+  
+    // Vérifier que le toggle est coché après le clic
+    cy.get('[data-test="toggle-checkbox"]')
+      .should('be.checked');
+
+    cy.get('[data-test="toggle-switch"]')
+    .click();
+  });

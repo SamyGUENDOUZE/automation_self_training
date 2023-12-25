@@ -55,29 +55,29 @@
     <h2>Voici quelques exemples d'inputs avec différents types :</h2>
 
     <label for="text-input">Texte :</label>
-    <input type="text" id="text-input" placeholder="Entrez du texte"> <br><br>
+    <input type="text" id="text-input" data-test="text-input" placeholder="Entrez du texte"> <br><br>
 
     <label for="number-input">Nombre :</label>
-    <input type="number" id="number-input" placeholder="Entrez un nombre"> <br><br>
+    <input type="number" id="number-input" data-test="number-input" placeholder="Entrez un nombre"> <br><br>
 
     <label for="email-input">Email :</label>
-    <input type="email" id="email-input" placeholder="Entrez votre adresse email"> <br><br>
+    <input type="email" id="email-input" data-test="email-input" placeholder="Entrez votre adresse email"> <br><br>
 
     <label for="time-input">Heure :</label>
-    <input type="time" id="time-input" placeholder="Sélectionnez une heure"> <br><br>
+    <input type="time" id="time-input" data-test="time-input" placeholder="Sélectionnez une heure"> <br><br>
 
     <label for="date-input">Date :</label>
-    <input type="date" id="date-input" placeholder="Sélectionnez une date"> <br><br>
+    <input type="date" id="date-input" data-test="date-input" placeholder="Sélectionnez une date"> <br><br>
 
     <label for="color-input">Couleur :</label>
-    <input type="color" id="color-input" value="#ff0000"> <br><br>
+    <input type="color" id="color-input" data-test="color-input" value="#ff0000"> <br><br>
 
   </div>
 
   <div class="content" id="contentDropdown" data-test="content-dropdown">
 
     <label for="cities-dropdown">Un peu de nostalgie 😁 :</label>
-    <select id="cities-dropdown">
+    <select id="cities-dropdown" data-test="cities-dropdown">
       <option value="">Sélectionnez une ville</option>
       <option value="argenta">Argenta</option>
       <option value="azuria">Azuria</option>
@@ -95,19 +95,19 @@
 
     <h2>Choix de personnages</h2>
 
-    <input type="checkbox" id="goku-checkbox" value="goku">
+    <input type="checkbox" id="goku-checkbox"  data-test= "goku-checkbox" value="goku">
     <label for="goku-checkbox">Goku</label> <br>
 
-    <input type="checkbox" id="gohan-checkbox" value="gohan">
+    <input type="checkbox" id="gohan-checkbox" data-test= "gohan-checkbox" value="gohan">
     <label for="gohan-checkbox">Gohan</label> <br>
 
-    <input type="checkbox" id="goten-checkbox" value="goten">
+    <input type="checkbox" id="goten-checkbox" data-test= "goten-checkbox" value="goten">
     <label for="goten-checkbox">Goten</label> <br>
 
-    <input type="checkbox" id="vegeta-checkbox" value="vegeta">
+    <input type="checkbox" id="vegeta-checkbox" data-test= "vegeta-checkbox" value="vegeta">
     <label for="vegeta-checkbox">Vegeta</label> <br>
 
-    <input type="checkbox" id="trunks-checkbox" value="trunks">
+    <input type="checkbox" id="trunks-checkbox" data-test= "trunks-checkbox" value="trunks">
     <label for="trunks-checkbox">Trunks</label> <br>
 
   </div>
@@ -116,19 +116,19 @@
 
     <h2>Choix de Pokémon</h2>
   
-    <input type="radio" id="pikachu-radio" name="pokemon" value="pikachu">
+    <input type="radio" id="pikachu-radio" data-test="pikachu-radio" name="pokemon" value="pikachu">
     <label for="pikachu-radio">Pikachu</label> <br>
   
-    <input type="radio" id="evoli-radio" name="pokemon" value="evoli">
+    <input type="radio" id="evoli-radio" data-test="evoli-radio" name="pokemon" value="evoli">
     <label for="evoli-radio">Evoli</label> <br>
   
-    <input type="radio" id="bulbizarre-radio" name="pokemon" value="bulbizarre">
+    <input type="radio" id="bulbizarre-radio" data-test="bulbizarre-radio" name="pokemon" value="bulbizarre">
     <label for="bulbizarre-radio">Bulbizarre</label> <br>
   
-    <input type="radio" id="carapuce-radio" name="pokemon" value="carapuce">
+    <input type="radio" id="carapuce-radio" data-test="carapuce-radio" name="pokemon" value="carapuce">
     <label for="carapuce-radio">Carapuce</label> <br>
   
-    <input type="radio" id="salamèche-radio" name="pokemon" value="salamèche">
+    <input type="radio" id="salamèche-radio" data-test="salamèche-radio" name="pokemon" value="salamèche">
     <label for="salamèche-radio">Salamèche</label> <br>
 
   </div>
@@ -138,8 +138,8 @@
     <h2>Voici un toggle switch</h2>
 
     <label class="toggle">
-      <input class="toggle-checkbox" type="checkbox">
-      <div class="toggle-switch"></div>
+      <input class="toggle-checkbox" data-test="toggle-checkbox" type="checkbox">
+      <div class="toggle-switch" data-test="toggle-switch"></div>
       <span class="toggle-label"> Un toggle switch à tester :)</span>
     </label>
 
