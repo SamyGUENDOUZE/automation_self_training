@@ -16,6 +16,7 @@
     <div id="tabCheckboxes" class="tab" data-test="tab-checkboxes" onclick="changeTab('checkboxes')">Checkboxes</div>
     <div id="tabRadioButtons" class="tab" data-test="tab-radioButtons" onclick="changeTab('radioButtons')">Boutons radios</div>
     <div id="tabToggleSwitch" class="tab" data-test="tab-toggleSwitch" onclick="changeTab('toggleSwitch')">Toggle switch</div>
+    <div id="tabSlider" class="tab" data-test="tab-slider" onclick="changeTab('slider')">Slider</div>
     <div id="tabForm" class="tab" data-test="tab-form" onclick="changeTab('form')">Formulaire</div>
   </div>
 
@@ -142,6 +143,22 @@
       <div class="toggle-switch" data-test="toggle-switch"></div>
       <span class="toggle-label"> Un toggle switch à tester :)</span>
     </label>
+
+  </div>
+
+  <div class="content" id ="contentSlider" data-test="content-slider">
+
+    <h2>Voici un slider</h2>
+
+    <input type="range" min="0" max="100" step="20" value="0" list="steplist" id="myRange" data-test="myRange">
+    <datalist id="steplist">
+      <option>0</option>
+      <option>20</option>
+      <option>40</option>
+      <option>60</option>
+      <option>80</option>
+      <option>100</option>
+    </datalist>
 
   </div>
 

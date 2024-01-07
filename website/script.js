@@ -66,6 +66,3 @@ function submitForm() {
     // const formattedDate = selectedDate.toLocaleDateString('fr-FR'); 
     // alert(`Nom: ${nom}\nPrénom: ${prenom}\nDate de naissance: ${formattedDate}\nTranche d'âge: ${trancheAge}`);
     }
-
-  
-  

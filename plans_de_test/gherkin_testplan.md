@@ -127,6 +127,18 @@
 ---
 ---
 
+<h3><u> Epic </u> : <u> Test de l'onglet Toggle slider </u></h3>
+
+[ ] <span style="color:#3C830C">***Scénario: Tester le slider à chaque graduation*** </span> <br>
+**Étant donné que** l'utilisateur est sur la page dans l'onglet "Slider" <br>
+**Et** que la valeur par défaut est 0 <br>
+**Quand** l'utilisateur sélectionne chaque option du slider <br>
+**Alors** la valeur du slider est mise à jour en fonction de l'option sélectionnée <br>
+**Et** aucune erreur est affichée 
+
+---
+---
+
 <h3><u> Epic </u> : <u> Test de l'onglet Formulaire </u></h3>
 
 [ ] <span style="color:#3C830C">***Scénario: Cas passant - Remplir tous les champs avec des valeurs valides*** </span> <br>

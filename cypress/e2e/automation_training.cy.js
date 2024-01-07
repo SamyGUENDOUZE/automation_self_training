@@ -147,6 +147,33 @@ describe('Onglet Toggle switch', () => {
 
 });
 
+describe('Onglet Slider', () => {
+  it('Scénario : Tester chaque graduation du slider', () => {
+    cy.visit('/index.html');
+    cy.get('[data-test="tab-slider"]')
+      .click(); 
+
+    // Vérifier que le curseur est initialement à la position de départ
+    cy.get('#myRange').should('have.value', '0');
+
+    // Itérer à travers chaque étape du curseur
+    cy.get('#myRange').then(($range) => {
+      const maxStep = ($range.attr('max') - $range.attr('min')) / $range.attr('step');
+
+      for (let i = 0; i <= maxStep; i++) {
+        // Déplacer le curseur à l'étape actuelle
+        cy.get('#myRange').invoke('val', i * $range.attr('step')).trigger('input');
+        
+        // Vérifier que le curseur est à l'étape actuelle
+        cy.get('#myRange').should('have.value', i * $range.attr('step'));
+      }
+    });
+
+    // Vérifier que le curseur est revenu à la position de départ
+    cy.get('#myRange').should('have.value', '100');
+  });
+});
+
 describe('Test de l\'onglet Formulaire', () => {
 
   it('Scenario : Cas passant - Remplir tous les champs avec des valeurs valides', () => {
